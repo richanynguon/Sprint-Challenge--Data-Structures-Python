@@ -51,6 +51,7 @@ class RingBuffer:
 class ArrayRingBuffer:
     def __init__(self, capacity):
         self.storage = RingBuffer(capacity)
+        # creating set in mem for data structure
         for i in range(0, capacity):
             self.storage.append(None)
 
@@ -60,9 +61,27 @@ class ArrayRingBuffer:
     def get(self):
         return self.storage.get()
 
+array = ArrayRingBuffer(20)
+array.append(2)
+array.append(3)
+print(array.get())
+
+
 # https://stackoverflow.com/questions/27089682/python-typeerror-object-of-type-has-no-len
 
 # *Stretch Goal*:  Another method of implementing a ring buffer uses an array (Python List) instead of a linked list.  What are the advantages and disadvantages of using this method?  What disadvantage normally found in arrays is overcome with this arrangement?
+
+
+
+
+'''
+Linked list doesnt need to have a certain allocated memory than arrays
+When adding to the beginning of the LL or DLL there is no need to traverse the array
+to reassign indexes 
+'''
+
+
+
 
 # For example:
 
